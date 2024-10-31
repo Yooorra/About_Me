@@ -1,7 +1,10 @@
+/* Base Styles (Unchanged) */
 body {
     background-image: url(imgs/webpage\ bg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -23,9 +26,16 @@ h3 {
 
 @font-face {
     font-family: 'minecraft';
-    src:url(fonts/Minecraft.woff);
+    src: url(fonts/Minecraft.woff);
     font-weight: normal;
     font-style: normal;
+}
+
+/* Element Positioning */
+.reminder, .info_yooorra h3, .song, .text_over_window, .main_window, .wattpad, .aff, .x, .kofi, .overlay-frame {
+    text-align: center;
+    color: black;
+    padding: 20px;
 }
 
 .reminder {
@@ -33,9 +43,6 @@ h3 {
     top: 51%;
     left: 63%;
     transform: translate(-50%, -50%);
-    color: black;
-    text-align: center;
-    padding: 20px;
 }
 
 .info_yooorra h3 {
@@ -43,9 +50,6 @@ h3 {
     top: 69%;
     left: 38%;
     transform: translate(-50%, -50%);
-    color: black;
-    text-align: center;
-    padding: 20px;
     line-height: 1.8;
     margin: 5px 0;
 }
@@ -55,9 +59,6 @@ h3 {
     top: 61%;
     left: 60.5%;
     transform: translate(-50%, -50%);
-    color: black;
-    text-align: center;
-    padding: 20px;
 }
 
 .text_over_window {
@@ -65,13 +66,9 @@ h3 {
     top: 30%;
     left: 60%;
     transform: translate(-50%, -50%);
-    color: black;
-    text-align: center;
-    padding: 20px;
 }
 
 .main_window {
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,4 +94,81 @@ h3 {
     width: 30px;
     height: 30px;
     margin-inline: 8px;
+}
+
+/* Icons */
+.wattpad, .aff, .x, .kofi {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.wattpad { top: 39%; left: 52%; }
+.aff { top: 39%; left: 60%; }
+.x { top: 39%; left: 68%; }
+.kofi { top: 51%; left: 52%; }
+
+.wattpad img, .aff img, .x img, .kofi img {
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.overlay-frame {
+    position: absolute;
+    top: 70.5%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    z-index: 10;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet view */
+@media (max-width: 768px) {
+    .main_window img {
+        height: 500px; /* Scales down window */
+    }
+    
+    .main_window_giff, .wattpad img, .aff img, .x img, .kofi img {
+        width: 60px; /* Scales down icons */
+        height: 60px;
+    }
+
+    .info_yooorra h3 {
+        font-size: 0.9em;
+        top: 70%;
+        left: 45%;
+    }
+
+    .overlay-frame {
+        width: 60%;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+    .main_window img {
+        height: 350px; /* Further scales down window */
+    }
+    
+    .main_window_giff, .wattpad img, .aff img, .x img, .kofi img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .info_yooorra h3 {
+        font-size: 0.8em;
+        top: 75%;
+        left: 50%;
+    }
+
+    .overlay-frame {
+        width: 80%;
+        top: 75%;
+    }
+
+    .reminder, .song {
+        font-size: 0.8em;
+    }
 }
