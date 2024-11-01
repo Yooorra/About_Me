@@ -132,7 +132,12 @@ body {
 @media (max-width: 768px) { /* Adjust the breakpoint as needed */
     body {
         /* Adjust padding for smaller screens */
-        padding-left: 5%; /* Add left padding */
-        padding-right: 5%; /* Add right padding */
+        padding-left: 5%; 
+        padding-right: 5%; 
     }
-  }
+
+    .info h3 { 
+        line-height: 2.5; 
+        font-size: 100%;   
+    }
+}
